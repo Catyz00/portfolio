@@ -16,7 +16,7 @@ const projects: Project[] = [
   {
     id: 1,
     title: "WebSite seguradora Prime Secure",
-    description: "WebSite corretora de seguros/consórcios de automóveis, residenciais e empresariais",
+    description: "WebSite corretora de seguros/consórcios de automóveis, residenciais e empresariais.",
     image: "/primesecure.jpeg",
     link: "https://primesecure.com.br",
     technologies: ["React", "Tailwind CSS"],
@@ -24,26 +24,18 @@ const projects: Project[] = [
   {
     id: 2,
     title: "WebSite AffinityPrime",
-    description: "WebSite corretora de seguros/consórcios de automóveis, residenciais e vida",
+    description: "WebSite corretora de seguros/consórcios de automóveis, residenciais e vida.",
     image: "/affinityprime.jpeg",
     link: "https://affinityprime.com.br",
     technologies: ["Next.js", "Tailwind CSS"],
   },
   {
     id: 3,
-    title: "Dashboard Analítico",
-    description: "Dashboard com gráficos em tempo real para análise de dados e métricas",
-    image: "/analytics-dashboard.png",
-    link: "https://example.com",
-    technologies: ["React", "Chart.js", "Node.js", "PostgreSQL"],
-  },
-  {
-    id: 4,
-    title: "Rede Social",
-    description: "Plataforma social com feed, perfis de usuário e sistema de mensagens",
-    image: "/social-media-platform.png",
-    link: "https://example.com",
-    technologies: ["Next.js", "Supabase", "Real-time", "Tailwind CSS"],
+    title: "Dashboard Vendas Analytics AffinityPrime",
+    description: "Dashboard com gráficos em tempo real para análise de dados e métricas das vendas dos corretores.",
+    image: "/dashaffinity.jpeg",
+    link: "https://portal.affinityprime.com.br",
+    technologies: ["Next.js", "TypeScript", "Tailwind CSS"],
   },
 ]
 

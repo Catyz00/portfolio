@@ -15,11 +15,11 @@ interface Project {
 const projects: Project[] = [
   {
     id: 1,
-    title: "E-commerce Platform",
-    description: "Plataforma de e-commerce completa com carrinho de compras e integração com pagamento",
-    image: "/ecommerce-dashboard.png",
-    link: "https://example.com",
-    technologies: ["React", "Next.js", "Stripe", "Tailwind CSS"],
+    title: "WebSite seguradora Prime Secure",
+    description: "WebSite corretora de seguros de automóveis, residenciais e empresariais",
+    image: "/primesecure.jpeg",
+    link: "https://primesecure.com.br",
+    technologies: ["React", "Tailwind CSS"],
   },
   {
     id: 2,

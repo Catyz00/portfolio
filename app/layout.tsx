@@ -4,6 +4,7 @@ import type React from "react"
 import { Geist, Geist_Mono } from "next/font/google"
 import { Analytics } from "@vercel/analytics/next"
 import { useEffect, useState } from "react"
+import { Sun, Moon } from "lucide-react"
 import "./globals.css"
 
 const _geist = Geist({ subsets: ["latin"] })
@@ -75,10 +76,10 @@ export default function RootLayout({
 
                 <button
                   onClick={toggleDarkMode}
-                  className="p-2 rounded-lg bg-muted hover:bg-muted/80 transition"
-                  aria-label="Toggle dark mode"
+                  className="p-2 rounded-lg bg-muted hover:bg-muted/80 transition flex items-center justify-center cursor-pointer"
+                  aria-label="Alternar tema"
                 >
-                  {isDark ? "☀️" : "🌙"}
+                  {isDark ? <Sun className="h-5 w-5" /> : <Moon className="h-5 w-5" />}
                 </button>
               </div>
             </nav>
@@ -88,7 +89,7 @@ export default function RootLayout({
 
           <footer className="border-t border-border bg-card py-8 mt-12">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-sm text-muted-foreground">
-              <p>© 2025 Portfólio. Todos os direitos reservados.</p>
+              <p>© 2025 @cat.dalsan. Todos os direitos reservados.</p>
             </div>
           </footer>
         </div>

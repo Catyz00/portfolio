@@ -37,15 +37,15 @@ export default function Home() {
           </div>
       </section>
 
-      {/* Projects Carousel */}
-      <section id="projects" className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h2 className="text-4xl font-bold text-primary mb-8">Projetos em Destaque</h2>
-        <ProjectCarousel />
-      </section>
-
       {/* About Section */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <AboutSection />
+      </section>
+
+{/* Projects Carousel */}
+      <section id="projects" className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <h2 className="text-4xl font-bold text-primary mb-8">Projetos em Destaque</h2>
+        <ProjectCarousel />
       </section>
 
       {/* Contact Section */}

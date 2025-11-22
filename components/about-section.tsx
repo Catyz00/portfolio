@@ -33,18 +33,6 @@ export default function AboutSection() {
             </ul>
           </div>
 
-          {/* Download CV Button */}
-          <div>
-            <a
-              href="/curriculo.pdf"
-              download
-              className="inline-flex items-center gap-2 px-6 py-3 bg-accent text-accent-foreground rounded-lg hover:opacity-90 transition font-semibold"
-            >
-              <Download size={20} />
-              Download Currículo
-            </a>
-          </div>
-
           {/* Social Links */}
           <div>
             <h3 className="text-lg font-semibold text-primary mb-3">Conecte-se</h3>

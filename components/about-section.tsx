@@ -1,16 +1,86 @@
 'use client';
 
+import React, { useEffect, useState, useRef } from 'react';
 import { Github, Linkedin, Instagram } from 'lucide-react';
 
 export default function AboutSection() {
+  // Typing effect for the "<!-- sobre mim -->" heading
+  const headingText = '<!-- sobre mim -->';
+  const [typed, setTyped] = useState('');
+  const headingRef = useRef<HTMLElement | null>(null);
+  const typingRef = useRef<number | null>(null);
+  const isAnimatingRef = useRef(false);
+
+  useEffect(() => {
+    // If user prefers reduced motion, show full text immediately and don't animate
+    if (
+      typeof window !== 'undefined' &&
+      window.matchMedia &&
+      window.matchMedia('(prefers-reduced-motion: reduce)').matches
+    ) {
+      setTyped(headingText);
+      return;
+    }
+
+    const el = headingRef.current;
+    if (!el) return;
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        for (const entry of entries) {
+          if (entry.isIntersecting) {
+            // Start typing only if not already animating
+            if (isAnimatingRef.current) return;
+            isAnimatingRef.current = true;
+            let i = 0;
+            const speed = 40;
+            setTyped('');
+            typingRef.current = window.setInterval(() => {
+              i += 1;
+              setTyped(headingText.slice(0, i));
+              if (i >= headingText.length) {
+                if (typingRef.current) {
+                  clearInterval(typingRef.current);
+                  typingRef.current = null;
+                }
+                isAnimatingRef.current = false;
+              }
+            }, speed);
+          } else {
+            // When heading leaves view and animation is not running, reset so it can play again on next entry
+            if (!isAnimatingRef.current) setTyped('');
+          }
+        }
+      },
+      { threshold: 0.25 },
+    );
+
+    observer.observe(el);
+
+    return () => {
+      observer.disconnect();
+      if (typingRef.current) {
+        clearInterval(typingRef.current);
+        typingRef.current = null;
+      }
+    };
+  }, []);
+
   return (
     <div className="space-y-12 my-50">
       <div className="grid md:grid-cols-2 gap-12 items-start">
         {/* Text Content */}
         <div className="space-y-6">
           <div>
-            <h2 className="text-4xl font-bold text-primary mb-4 text-center">
-              &lt;!-- sobre mim --&gt;
+            <h2
+              className="text-4xl font-bold text-primary mb-4 text-center"
+              aria-live="polite"
+              ref={headingRef}
+            >
+              {typed}
+              <span className="ml-1 inline-block animate-pulse" aria-hidden>
+                {typed.length < headingText.length ? '|' : ''}
+              </span>
             </h2>
             <p className="text-lg text-foreground/80 leading-relaxed">
               Sou desenvolvedora web apaixonada por criar experiências digitais

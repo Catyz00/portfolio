@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useRef } from 'react';
 import { ChevronLeft, ChevronRight, ExternalLink } from 'lucide-react';
 
 interface Project {
@@ -44,6 +44,7 @@ const projects: Project[] = [
 
 export default function ProjectCarousel() {
   const [current, setCurrent] = useState(0);
+  const touchStartX = useRef<number | null>(null);
 
   const next = () => {
     setCurrent((prev) => (prev + 1) % projects.length);
@@ -57,11 +58,24 @@ export default function ProjectCarousel() {
 
   return (
     <div className="space-y-6">
-      <div className="flex items-center justify-center relative">
+      <div
+        className="flex items-center justify-center relative"
+        onTouchStart={(e) => {
+          touchStartX.current = e.touches?.[0]?.clientX ?? null;
+        }}
+        onTouchEnd={(e) => {
+          if (touchStartX.current === null) return;
+          const delta = e.changedTouches?.[0]?.clientX - touchStartX.current;
+          // swipe threshold
+          if (delta > 50) prev();
+          else if (delta < -50) next();
+          touchStartX.current = null;
+        }}
+      >
         {/* Left button placed outside the card (hidden on small screens) */}
         <button
           onClick={prev}
-          className="hidden md:inline-flex items-center justify-center p-3 rounded-full bg-primary text-primary-foreground hover:opacity-90 transition z-20 mr-4"
+          className="absolute left-2 md:relative inline-flex items-center justify-center p-2 sm:p-3 rounded-full bg-primary text-primary-foreground hover:opacity-90 transition z-20 mr-4"
           aria-label="Previous project"
         >
           <ChevronLeft size={24} />
@@ -69,7 +83,7 @@ export default function ProjectCarousel() {
 
         <div className="rounded-2xl overflow-hidden bg-card border border-border shadow-lg max-w-4xl w-full">
           {/* Image */}
-          <div className="relative h-96 md:h-[500px] overflow-hidden bg-muted">
+          <div className="relative h-64 sm:h-80 md:h-[500px] overflow-hidden bg-muted">
             <img
               src={project.image || '/placeholder.svg'}
               alt={project.title}
@@ -79,28 +93,17 @@ export default function ProjectCarousel() {
 
           {/* Content */}
           <div className="p-8">
-            <div className="flex items-start justify-between mb-4">
-              <div>
-                <h3 className="text-3xl font-bold text-primary mb-2">
-                  {project.title}
-                </h3>
-                <p className="text-foreground/80 text-lg">
-                  {project.description}
-                </p>
-              </div>
-              <a
-                href={project.link}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex items-center gap-2 px-4 py-2 bg-secondary text-secondary-foreground rounded-lg hover:opacity-90 transition flex-shrink-0 ml-4"
-              >
-                <span>Visualizar</span>
-                <ExternalLink size={18} />
-              </a>
+            <div className="mb-4">
+              <h3 className="text-2xl sm:text-3xl font-bold text-primary mb-2">
+                {project.title}
+              </h3>
+              <p className="text-foreground/80 text-sm sm:text-base md:text-lg">
+                {project.description}
+              </p>
             </div>
 
             {/* Technologies */}
-            <div className="flex flex-wrap gap-2 mb-6">
+            <div className="flex flex-wrap gap-2 mb-4">
               {project.technologies.map((tech) => (
                 <span
                   key={tech}
@@ -110,13 +113,26 @@ export default function ProjectCarousel() {
                 </span>
               ))}
             </div>
+
+            {/* Action button moved below content */}
+            <div className="mt-4 flex justify-center">
+              <a
+                href={project.link}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 px-6 py-3 bg-secondary text-secondary-foreground rounded-lg hover:opacity-90 transition w-full sm:w-auto justify-center"
+              >
+                <span>Visualizar</span>
+                <ExternalLink size={18} />
+              </a>
+            </div>
           </div>
         </div>
 
         {/* Right button placed outside the card (hidden on small screens) */}
         <button
           onClick={next}
-          className="hidden md:inline-flex items-center justify-center p-3 rounded-full bg-primary text-primary-foreground hover:opacity-90 transition z-20 ml-4"
+          className="absolute right-2 md:relative inline-flex items-center justify-center p-2 sm:p-3 rounded-full bg-primary text-primary-foreground hover:opacity-90 transition z-20 ml-4"
           aria-label="Next project"
         >
           <ChevronRight size={24} />
@@ -130,8 +146,10 @@ export default function ProjectCarousel() {
             <button
               key={index}
               onClick={() => setCurrent(index)}
-              className={`w-3 h-3 rounded-full transition ${
-                index === current ? 'bg-primary w-8' : 'bg-muted'
+              className={`rounded-full transition ${
+                index === current
+                  ? 'bg-primary w-6 sm:w-8 h-3'
+                  : 'bg-muted w-3 h-3'
               }`}
               aria-label={`Go to project ${index + 1}`}
             />

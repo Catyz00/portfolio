@@ -48,8 +48,12 @@ export default function RootLayout({
   return (
     <html lang="pt-BR" suppressHydrationWarning>
       <head>
-        <title>Portfólio</title>
+        <title>CatarinaRibeiro</title>
+
         <meta name="description" content="Portfólio profissional" />
+        {/* Use requested flaticon ICO */}
+        <link rel="icon" href="/iconeeu.ico" />
+        <link rel="apple-touch-icon" href="/iconeeu.ico" />
       </head>
       <body className={`${inconsolata.className} antialiased`}>
         <div className="flex flex-col min-h-screen">

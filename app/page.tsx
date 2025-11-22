@@ -2,6 +2,7 @@
 import ProjectCarousel from "@/components/project-carousel"
 import AboutSection from "@/components/about-section"
 import ContactForm from "@/components/contact-form"
+import ToolsGrid from "@/components/tools"
 
 export default function Home() {
   return (
@@ -46,6 +47,12 @@ export default function Home() {
       <section id="projects" className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <h2 className="text-4xl font-bold text-primary mb-8 text-center">&lt;!-- projetos em destaque --&gt;</h2>
         <ProjectCarousel />
+      </section>
+      
+      {/* Tools Grid */}
+      <section id="tools" className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <h2 className="text-4xl font-bold text-primary mb-8 text-center">&lt;!-- ferramentas e linguagens --&gt;</h2>
+        <ToolsGrid />
       </section>
 
       {/* Contact Section */}

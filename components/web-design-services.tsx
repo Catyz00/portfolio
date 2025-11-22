@@ -195,9 +195,14 @@ export default function WebDesignServices() {
       <div className="bg-primary text-primary-foreground rounded-lg p-12 text-center space-y-4">
         <h3 className="text-3xl font-bold">Pronto para começar?</h3>
         <p className="text-lg opacity-90">Vamos transformar sua ideia em um site incrível</p>
-        <button className="bg-secondary text-secondary-foreground px-8 py-3 rounded-lg hover:opacity-90 transition font-semibold">
+        <a
+          href={`https://wa.me/5511994505049?text=${encodeURIComponent("Olá! Gostaria de conversar sobre um projeto.")}`}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="bg-secondary text-secondary-foreground px-8 py-3 rounded-lg hover:opacity-90 transition font-semibold inline-block"
+        >
           Solicitar Proposta
-        </button>
+        </a>
       </div>
     </div>
   )

@@ -43,7 +43,6 @@ export default function TarotServices() {
         "Múltiplos métodos de leitura",
         "Dúvidas ilimitadas",
         "Plano de ação personalizado",
-        "Acompanhamento por 30 dias",
       ],
       popular: true,
     },

@@ -1,14 +1,17 @@
 'use client';
 
 import type React from 'react';
-import { Geist, Geist_Mono } from 'next/font/google';
+import { Inconsolata } from 'next/font/google';
 import { Analytics } from '@vercel/analytics/next';
 import { useEffect, useState } from 'react';
 import { Sun, Moon, Github, Linkedin, Instagram } from 'lucide-react';
 import './globals.css';
 
-const _geist = Geist({ subsets: ['latin'] });
-const _geistMono = Geist_Mono({ subsets: ['latin'] });
+const inconsolata = Inconsolata({
+  subsets: ['latin'],
+  weight: ['300', '400', '500', '600', '700'],
+  variable: '--font-inconsolata',
+});
 
 export default function RootLayout({
   children,
@@ -48,7 +51,7 @@ export default function RootLayout({
         <title>Portfólio</title>
         <meta name="description" content="Portfólio profissional" />
       </head>
-      <body className={`font-sans antialiased`}>
+      <body className={`${inconsolata.className} antialiased`}>
         <div className="flex flex-col min-h-screen">
           <header className="sticky top-0 z-50 w-full border-b border-border bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
             <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex justify-between items-center">

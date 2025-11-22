@@ -69,13 +69,13 @@ export default function RootLayout({
                 <div className="hidden sm:flex items-center gap-2">
                   <a
                     href="/"
-                    className="text-foreground hover:text-primary transition"
+                    className="text-foreground hover:text-primary transition m-2"
                   >
                     Portfolio
                   </a>
                   <a
                     href="/servicos"
-                    className="text-foreground hover:text-primary transition"
+                    className="text-foreground hover:text-primary transition m-5"
                   >
                     Serviços
                   </a>
@@ -83,7 +83,7 @@ export default function RootLayout({
 
                 <button
                   onClick={toggleDarkMode}
-                  className="p-2 rounded-lg bg-muted hover:bg-muted/80 transition flex items-center justify-center cursor-pointer mr-10 ml-5"
+                  className="p-2 rounded-lg bg-muted hover:bg-muted/80 transition flex items-center justify-center cursor-pointer mr-10"
                   aria-label="Alternar tema"
                 >
                   {isDark ? (

@@ -222,7 +222,7 @@ export default function WebDesignServices() {
           {[
             {
               title: 'Experiência',
-              desc: 'Mais de 50 projetos entregues com sucesso',
+              desc: 'Os melhores projetos entregues',
             },
             {
               title: 'Tecnologia Moderna',

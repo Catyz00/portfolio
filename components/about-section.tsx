@@ -41,26 +41,6 @@ export default function AboutSection() {
             </p>
           </div>
 
-          <div>
-            <h3 className="text-xl font-semibold text-primary mb-3">
-              Expertise
-            </h3>
-            <ul className="space-y-2 text-foreground/80">
-              <li className="flex items-center gap-2">
-                <span className="w-2 h-2 bg-secondary rounded-full"></span>
-                Desenvolvimento Frontend (React, Next.js, Tailwind CSS)
-              </li>
-              <li className="flex items-center gap-2">
-                <span className="w-2 h-2 bg-secondary rounded-full"></span>
-                Design Responsivo e UX/UI
-              </li>
-              <li className="flex items-center gap-2">
-                <span className="w-2 h-2 bg-secondary rounded-full"></span>
-                Integração com APIs e Serviços
-              </li>
-            </ul>
-          </div>
-
           {/* Social Links */}
           <div>
             <h3 className="text-lg font-semibold text-primary mb-3">

@@ -1,7 +1,14 @@
 'use client';
 
 import { useState } from 'react';
-import { Check, Code, Palette, Smartphone, CheckCircle2 } from 'lucide-react';
+import {
+  Check,
+  Code,
+  Palette,
+  Smartphone,
+  CheckCircle2,
+  Lock,
+} from 'lucide-react';
 
 export default function WebDesignServices() {
   const [selectedService, setSelectedService] = useState<string | null>(null);
@@ -82,18 +89,31 @@ export default function WebDesignServices() {
       <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
         {services.map((service) => {
           const IconComponent = service.icon;
+          const isLocked = service.id === 'app';
           return (
             <div
               key={service.id}
-              className={`rounded-lg border transition cursor-pointer relative ${
+              className={`rounded-lg border transition relative ${
                 service.popular
                   ? 'border-secondary bg-card shadow-lg'
-                  : 'border-border bg-card hover:border-primary'
+                  : 'border-border bg-card'
+              } ${
+                isLocked
+                  ? 'opacity-60 cursor-not-allowed'
+                  : 'cursor-pointer hover:border-primary'
               } ${
                 selectedService === service.id ? 'ring-2 ring-green-500' : ''
               }`}
-              onClick={() => setSelectedService(service.id)}
+              onClick={() => !isLocked && setSelectedService(service.id)}
+              aria-disabled={isLocked}
             >
+              {isLocked && (
+                <div className="absolute top-3 right-3 z-20">
+                  <div className="bg-muted/80 text-foreground rounded-full p-1 shadow">
+                    <Lock size={18} />
+                  </div>
+                </div>
+              )}
               {selectedService === service.id && (
                 <div className="absolute -top-3 -right-3 z-10">
                   <div className="bg-green-500 rounded-full p-1 shadow-lg">

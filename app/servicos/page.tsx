@@ -1,11 +1,12 @@
 'use client';
 
+// no state needed — always show webdesign
 import { useState } from 'react';
 import TarotServices from '@/components/tarot-services';
 import WebDesignServices from '@/components/web-design-services';
 
 export default function ServicesPage() {
-  const [activeTab, setActiveTab] = useState<'tarot' | 'webdesign'>('tarot');
+  const activeTab: 'tarot' | 'webdesign' = 'webdesign';
 
   return (
     <div className="space-y-12 py-12">
@@ -31,18 +32,9 @@ export default function ServicesPage() {
             Consultas de Tarô
             {activeTab === "tarot" && <div className="absolute bottom-0 left-0 right-0 h-1 bg-primary"></div>}
           </button> */}
-          <button
-            onClick={() => setActiveTab('webdesign')}
-            className={`px-8 py-4 font-semibold transition relative ${
-              activeTab === 'webdesign'
-                ? 'text-primary'
-                : 'text-muted-foreground hover:text-foreground'
-            }`}
-          >
+          <button className="px-8 py-4 font-semibold transition relative text-primary">
             Desenvolvimento Web
-            {activeTab === 'webdesign' && (
-              <div className="absolute bottom-0 left-0 right-0 h-1 bg-primary"></div>
-            )}
+            <div className="absolute bottom-0 left-0 right-0 h-1 bg-primary" />
           </button>
         </div>
       </section>

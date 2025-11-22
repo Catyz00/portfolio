@@ -1,79 +1,79 @@
-"use client"
+'use client';
 
-import { useState } from "react"
-import { Star, Clock, CheckCircle2 } from "lucide-react"
+import { useState } from 'react';
+import { Star, Clock, CheckCircle2 } from 'lucide-react';
 
 export default function TarotServices() {
-  const [selectedPackage, setSelectedPackage] = useState<string | null>(null)
+  const [selectedPackage, setSelectedPackage] = useState<string | null>(null);
 
   const packages = [
     {
-      id: "single",
-      name: "Consulta Única",
-      price: "R$ 5",
-      description: "Sessão com 1 pergunta",
+      id: 'single',
+      name: 'Consulta Única',
+      price: 'R$ 5',
+      description: 'Sessão com 1 pergunta',
       features: [
-        "Leitura de 3 cartas",
-        "Interpretação detalhada",
-        "Dúvida específica respondida",
-        "Relatório em texto",
+        'Leitura de 3 cartas',
+        'Interpretação detalhada',
+        'Dúvida específica respondida',
+        'Relatório em texto',
       ],
     },
     {
-      id: "full",
-      name: "Consulta Completa",
-      price: "R$ 15",
-      description: "Sessão com 3 perguntas",
+      id: 'full',
+      name: 'Consulta Completa',
+      price: 'R$ 15',
+      description: 'Sessão com 3 perguntas',
       features: [
-        "Leitura de 5 cartas",
-        "Análise profunda",
-        "Múltiplas perspectivas",
-        "Recomendações personalizadas",
-        "Relatório detalhado",
+        'Leitura de 5 cartas',
+        'Análise profunda',
+        'Múltiplas perspectivas',
+        'Recomendações personalizadas',
+        'Relatório detalhado',
       ],
     },
     {
-      id: "premium",
-      name: "Consultoria Premium",
-      price: "R$ 25",
-      description: "Sessão com 5 perguntas",
+      id: 'premium',
+      name: 'Consultoria Premium',
+      price: 'R$ 25',
+      description: 'Sessão com 5 perguntas',
       features: [
-        "Leitura com 5 cartas",
-        "Análise aprofundada",
-        "Múltiplos métodos de leitura",
-        "Dúvidas ilimitadas",
-        "Plano de ação personalizado",
+        'Leitura com 5 cartas',
+        'Análise aprofundada',
+        'Múltiplos métodos de leitura',
+        'Dúvidas ilimitadas',
+        'Plano de ação personalizado',
       ],
       popular: true,
     },
-  ]
+  ];
 
-  const selectedPkg = packages.find((p) => p.id === selectedPackage)
+  const selectedPkg = packages.find((p) => p.id === selectedPackage);
 
   // Número de WhatsApp usado no formulário de contato
-  const WHATSAPP_NUMBER = "5511994505049"
+  const WHATSAPP_NUMBER = '5511994505049';
 
   const getWhatsAppUrl = (pkg: { name: string; price: string }) => {
-    const text = `Olá! Gostaria de agendar a ${pkg.name} (${pkg.price}).`
-    return `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(text)}`
-  }
+    const text = `Olá! Gostaria de agendar a ${pkg.name} (${pkg.price}).`;
+    return `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(text)}`;
+  };
 
   const handleSchedule = () => {
-    if (!selectedPkg) return
-    const url = getWhatsAppUrl(selectedPkg as { name: string; price: string })
-    window.open(url, "_blank")
-  }
+    if (!selectedPkg) return;
+    const url = getWhatsAppUrl(selectedPkg as { name: string; price: string });
+    window.open(url, '_blank');
+  };
 
   return (
     <div className="space-y-12">
       {/* Hero Section */}
-      <div className="text-center space-y-4 py-8">
+      {/* <div className="text-center space-y-4 py-8">
         <h2 className="text-4xl font-bold text-primary">Consultas de Tarô</h2>
         <p className="text-xl text-foreground/80 max-w-2xl mx-auto">
           Descubra respostas através da sabedoria ancestral do Tarô. Sessões personalizadas para orientação e
           autoconhecimento.
         </p>
-      </div>
+      </div> */}
 
       {/* Packages Grid */}
       <div className="grid md:grid-cols-3 gap-8">
@@ -81,15 +81,21 @@ export default function TarotServices() {
           <div
             key={pkg.id}
             className={`rounded-lg border transition cursor-pointer transform hover:scale-105 relative ${
-              pkg.popular ? "border-secondary bg-card shadow-lg" : "border-border bg-card hover:border-primary"
-            } ${selectedPackage === pkg.id ? "ring-2 ring-green-500" : ""}`}
+              pkg.popular
+                ? 'border-secondary bg-card shadow-lg'
+                : 'border-border bg-card hover:border-primary'
+            } ${selectedPackage === pkg.id ? 'ring-2 ring-green-500' : ''}`}
             onClick={() => setSelectedPackage(pkg.id)}
           >
             {/* Indicador de Seleção */}
             {selectedPackage === pkg.id && (
               <div className="absolute -top-3 -right-3 z-10">
                 <div className="bg-green-500 rounded-full p-1 shadow-lg">
-                  <CheckCircle2 size={28} className="text-white" strokeWidth={2.5} />
+                  <CheckCircle2
+                    size={28}
+                    className="text-white"
+                    strokeWidth={2.5}
+                  />
                 </div>
               </div>
             )}
@@ -103,20 +109,30 @@ export default function TarotServices() {
             <div className="p-6 space-y-4">
               {/* Header */}
               <div>
-                <h3 className="text-2xl font-bold text-primary mb-2">{pkg.name}</h3>
+                <h3 className="text-2xl font-bold text-primary mb-2">
+                  {pkg.name}
+                </h3>
                 <p className="text-foreground/70">{pkg.description}</p>
               </div>
 
               {/* Price */}
               <div>
-                <div className="text-4xl font-bold text-primary mb-1">{pkg.price}</div>
+                <div className="text-4xl font-bold text-primary mb-1">
+                  {pkg.price}
+                </div>
               </div>
 
               {/* Features */}
               <ul className="space-y-3">
                 {pkg.features.map((feature, idx) => (
-                  <li key={idx} className="flex items-start gap-3 text-foreground/80">
-                    <Star size={16} className="text-secondary mt-1 flex-shrink-0" />
+                  <li
+                    key={idx}
+                    className="flex items-start gap-3 text-foreground/80"
+                  >
+                    <Star
+                      size={16}
+                      className="text-secondary mt-1 flex-shrink-0"
+                    />
                     <span>{feature}</span>
                   </li>
                 ))}
@@ -150,12 +166,14 @@ export default function TarotServices() {
         <div className="bg-card border border-border rounded-lg p-8 space-y-4">
           <h3 className="text-2xl font-bold text-primary">Sobre as Leituras</h3>
           <p className="text-foreground/80 leading-relaxed">
-            Minhas leituras de tarô combinam conhecimento clássico com intuição moderna. Cada carta tem múltiplas
-            interpretações que variam conforme o contexto de sua vida.
+            Minhas leituras de tarô combinam conhecimento clássico com intuição
+            moderna. Cada carta tem múltiplas interpretações que variam conforme
+            o contexto de sua vida.
           </p>
           <p className="text-foreground/80 leading-relaxed">
-            Trabalho com diferentes spreads (disposições) para oferecer a melhor perspectiva sobre sua situação,
-            ajudando você a fazer escolhas mais informadas.
+            Trabalho com diferentes spreads (disposições) para oferecer a melhor
+            perspectiva sobre sua situação, ajudando você a fazer escolhas mais
+            informadas.
           </p>
         </div>
 
@@ -184,34 +202,41 @@ export default function TarotServices() {
 
       {/* Testimonials */}
       <div className="space-y-6">
-        <h3 className="text-2xl font-bold text-primary text-center">Depoimentos</h3>
+        <h3 className="text-2xl font-bold text-primary text-center">
+          Depoimentos
+        </h3>
         <div className="grid md:grid-cols-3 gap-6">
           {[
             {
-              name: "Maria S.",
-              text: "A leitura foi muito precisa e ajudou a esclarecer minhas dúvidas!",
+              name: 'Maria S.',
+              text: 'A leitura foi muito precisa e ajudou a esclarecer minhas dúvidas!',
             },
             {
-              name: "João P.",
-              text: "Excelente atendimento, com interpretações profundas e úteis.",
+              name: 'João P.',
+              text: 'Excelente atendimento, com interpretações profundas e úteis.',
             },
             {
-              name: "Ana C.",
-              text: "Recomendo! As insights foram transformadoras para minha vida.",
+              name: 'Ana C.',
+              text: 'Recomendo! As insights foram transformadoras para minha vida.',
             },
           ].map((testimonial, idx) => (
-            <div key={idx} className="bg-card border border-border rounded-lg p-6 space-y-3">
+            <div
+              key={idx}
+              className="bg-card border border-border rounded-lg p-6 space-y-3"
+            >
               <div className="flex gap-1 text-secondary">
                 {[...Array(5)].map((_, i) => (
                   <Star key={i} size={16} fill="currentColor" />
                 ))}
               </div>
               <p className="text-foreground/80 italic">"{testimonial.text}"</p>
-              <p className="font-semibold text-foreground">— {testimonial.name}</p>
+              <p className="font-semibold text-foreground">
+                — {testimonial.name}
+              </p>
             </div>
           ))}
         </div>
       </div>
     </div>
-  )
+  );
 }

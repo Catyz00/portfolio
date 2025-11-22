@@ -240,35 +240,35 @@ export default function Home() {
   return (
     <div className="space-y-16">
       {/* Hero: ocupa a viewport inicial e centraliza o conteúdo */}
-      <section className="min-h-screen flex items-center justify-center bg-background relative">
+      <section className="min-h-screen sm:min-h-[calc(100vh-64px)] flex items-center justify-center bg-background relative">
         <div
           ref={heroRef}
-          className={`text-center px-6 transition-all duration-700 ease-out ${
+          className={`text-center px-4 sm:px-6 transition-all duration-700 ease-out ${
             heroVisible
               ? 'opacity-100 translate-y-0'
               : 'opacity-0 translate-y-6'
           }`}
         >
           <h1
-            className="text-6xl md:text-7xl font-bold text-primary mb-6"
+            className="text-4xl sm:text-5xl md:text-7xl font-bold text-primary mb-4 sm:mb-6"
             style={{ transitionDelay: heroVisible ? '80ms' : '0ms' }}
           >
             {typedText}
-            <span className="inline-block w-0.5 h-8 align-middle bg-primary ml-2 animate-pulse" />
+            <span className="inline-block w-0.5 h-6 sm:h-8 align-middle bg-primary ml-2 animate-pulse" />
           </h1>
           <p
-            className="text-2xl md:text-2xl text-foreground/80 max-w-2xl mx-auto"
+            className="text-base sm:text-lg md:text-2xl text-foreground/80 max-w-xl sm:max-w-2xl mx-auto"
             style={{ transitionDelay: heroVisible ? '160ms' : '0ms' }}
           >
             Conheça meus projetos, serviços e desenvolvimento web e design.
           </p>
 
           {/* Download CV abaixo do subtítulo */}
-          <div className="mt-6 flex justify-center">
+          <div className="mt-4 sm:mt-6 flex justify-center">
             <a
               href="/CV_Dev_CatarinaRibeiro_2025.pdf"
               download
-              className="px-6 py-3 rounded-lg bg-secondary text-secondary-foreground hover:opacity-90 transition font-semibold"
+              className="px-4 py-2 sm:px-6 sm:py-3 rounded-lg bg-secondary text-secondary-foreground hover:opacity-90 transition font-semibold inline-block w-full sm:w-auto text-center"
               style={{ transitionDelay: heroVisible ? '240ms' : '0ms' }}
             >
               Download CV
@@ -276,14 +276,14 @@ export default function Home() {
           </div>
         </div>
 
-        {/* Indicador visual pulsante (não interativo) posicionado mais abaixo */}
+        {/* Indicador visual pulsante (não interativo) posicionado mais abaixo - closer on small screens */}
         <div
           aria-hidden="true"
-          className="absolute bottom-24 left-1/2 -translate-x-1/2 flex items-center justify-center w-12 h-12 rounded-full bg-secondary text-secondary-foreground shadow-lg opacity-100 animate-bounce pointer-events-none"
+          className="absolute bottom-12 sm:bottom-24 left-1/2 -translate-x-1/2 flex items-center justify-center w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-secondary text-secondary-foreground shadow-lg opacity-100 animate-bounce pointer-events-none"
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
-            className="h-6 w-6"
+            className="h-5 w-5 sm:h-6 sm:w-6"
             fill="none"
             viewBox="0 0 24 24"
             stroke="currentColor"

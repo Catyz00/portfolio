@@ -120,7 +120,7 @@ const SkillsComponent = () => {
       <div className="mx-auto">
         <div className="text-center mb-12">
           <p className="text-muted-foreground flex items-center justify-center gap-2 text-2xl">
-            <Bell className="w-4 h-4 sm:w-5 sm:h-5 text-accent" />
+            <Bell className="w-15 h-15 sm:w-5 sm:h-5 text-accent" />
             {/* Desktop / larger screens: hover instruction */}
             <span className="hidden sm:inline">
               Passe o mouse sobre cada skill para ver o progresso

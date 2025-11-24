@@ -142,7 +142,15 @@ const SkillsComponent = () => {
               onMouseLeave={() => setHoveredIndex(null)}
               onFocus={() => setHoveredIndex(index)}
               onBlur={() => setHoveredIndex(null)}
-              onClick={() => toggleSelected(index)}
+              onClick={() => {
+                // Only allow click selection on small screens (Tailwind 'sm' breakpoint is 640px)
+                if (
+                  typeof window !== 'undefined' &&
+                  window.matchMedia('(max-width: 639px)').matches
+                ) {
+                  toggleSelected(index);
+                }
+              }}
             >
               {/* determine active state: hovered (desktop) OR selected (clicked on mobile) */}
               <div className="flex items-center justify-between mb-4">

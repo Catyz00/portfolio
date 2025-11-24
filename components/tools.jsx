@@ -98,6 +98,13 @@ const SkillsComponent = () => {
       percentage: levelConfig.medio.percentage,
       color: 'bg-indigo-500',
     },
+    {
+      name: 'Vue.js',
+      icon: <FileCode className="w-6 h-6" />,
+      level: 'medio',
+      percentage: levelConfig.medio.percentage,
+      color: 'bg-green-500',
+    },
   ];
 
   return (

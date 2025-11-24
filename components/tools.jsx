@@ -19,6 +19,14 @@ const levelConfig = {
 
 const SkillsComponent = () => {
   const [hoveredIndex, setHoveredIndex] = useState(null);
+  // store indices of skills that were clicked (allows multiple to remain selected)
+  const [selectedIndices, setSelectedIndices] = useState([]);
+
+  const toggleSelected = (index) => {
+    setSelectedIndices((prev) =>
+      prev.includes(index) ? prev.filter((i) => i !== index) : [...prev, index],
+    );
+  };
 
   const skills = [
     {
@@ -112,8 +120,15 @@ const SkillsComponent = () => {
       <div className="mx-auto">
         <div className="text-center mb-12">
           <p className="text-muted-foreground flex items-center justify-center gap-2 text-2xl">
-            <Bell className="w-5 h-5 text-accent" />
-            <span>Passe o mouse sobre cada skill para ver o progresso</span>
+            <Bell className="w-4 h-4 sm:w-5 sm:h-5 text-accent" />
+            {/* Desktop / larger screens: hover instruction */}
+            <span className="hidden sm:inline">
+              Passe o mouse sobre cada skill para ver o progresso
+            </span>
+            {/* Mobile / small screens: click instruction */}
+            <span className="inline sm:hidden">
+              Clique para ver sobre cada skill para ver o progresso
+            </span>
           </p>
         </div>
 
@@ -127,7 +142,9 @@ const SkillsComponent = () => {
               onMouseLeave={() => setHoveredIndex(null)}
               onFocus={() => setHoveredIndex(index)}
               onBlur={() => setHoveredIndex(null)}
+              onClick={() => toggleSelected(index)}
             >
+              {/* determine active state: hovered (desktop) OR selected (clicked on mobile) */}
               <div className="flex items-center justify-between mb-4">
                 <div className="flex items-center gap-3">
                   <div
@@ -146,7 +163,9 @@ const SkillsComponent = () => {
                 </div>
 
                 <div className="text-2xl font-bold text-foreground">
-                  {hoveredIndex === index ? `${skill.percentage}%` : '—'}
+                  {hoveredIndex === index || selectedIndices.includes(index)
+                    ? `${skill.percentage}%`
+                    : '—'}
                 </div>
               </div>
 
@@ -155,7 +174,9 @@ const SkillsComponent = () => {
                   className={`absolute top-0 left-0 h-full ${skill.color} rounded-full transition-all duration-1000 ease-out`}
                   style={{
                     width:
-                      hoveredIndex === index ? `${skill.percentage}%` : '0%',
+                      hoveredIndex === index || selectedIndices.includes(index)
+                        ? `${skill.percentage}%`
+                        : '0%',
                   }}
                 >
                   <div className="absolute inset-0 bg-linear-to-r from-transparent via-primary-foreground/20 to-transparent animate-pulse" />

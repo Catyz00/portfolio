@@ -80,8 +80,8 @@ export default function WebDesignServices() {
       <div className="text-center space-y-4 py-8">
         <h2 className="text-4xl font-bold text-primary">Desenvolvimento Web</h2>
         <p className="text-xl text-foreground/80 max-w-2xl mx-auto">
-          Criamos sites e aplicações web profissionais que transformam sua
-          presença digital e impulsionam seu negócio.
+          Crio sites e aplicações web profissionais que transformam sua presença
+          digital e impulsionam seu negócio.
         </p>
       </div>
 
@@ -216,7 +216,7 @@ export default function WebDesignServices() {
       {/* Why Choose Us */}
       <div className="bg-card border border-border rounded-lg p-8 space-y-6">
         <h3 className="text-2xl font-bold text-primary">
-          Por que nos escolher?
+          Por que me escolher?
         </h3>
         <div className="grid md:grid-cols-3 gap-8">
           {[
@@ -226,11 +226,11 @@ export default function WebDesignServices() {
             },
             {
               title: 'Tecnologia Moderna',
-              desc: 'Utilizamos as melhores ferramentas e práticas',
+              desc: 'Utilizo as melhores ferramentas e práticas',
             },
             {
               title: 'Suporte no Primeiro mês',
-              desc: 'Estamos aqui para ajudar sempre que precisar',
+              desc: 'Estou aqui para ajudar sempre que precisar',
             },
           ].map((item, idx) => (
             <div key={idx} className="space-y-2">

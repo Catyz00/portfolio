@@ -230,10 +230,10 @@ export default function WebDesignServices() {
         <div className="flex items-center justify-center relative">
           <button
             onClick={prev}
-            className="absolute left-2 inline-flex items-center justify-center p-2 sm:p-3 rounded-full bg-primary text-primary-foreground hover:opacity-90 transition z-20"
+            className="absolute left-2 inline-flex items-center justify-center w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-primary text-primary-foreground hover:opacity-90 transition z-20"
             aria-label="Previous service"
           >
-            {/* left chevron - simple char to avoid extra import */}‹
+            {/* left chevron - simple char kept */}‹
           </button>
 
           <div className="max-w-3xl w-full px-4">
@@ -242,7 +242,7 @@ export default function WebDesignServices() {
 
           <button
             onClick={next}
-            className="absolute right-2 inline-flex items-center justify-center p-2 sm:p-3 rounded-full bg-primary text-primary-foreground hover:opacity-90 transition z-20"
+            className="absolute right-2 inline-flex items-center justify-center w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-primary text-primary-foreground hover:opacity-90 transition z-20"
             aria-label="Next service"
           >
             ›

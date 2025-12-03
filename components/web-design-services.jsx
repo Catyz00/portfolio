@@ -43,7 +43,7 @@ export default function WebDesignServices() {
       details: [
         'Design personalizado',
         'Blog integrado',
-        'Portfolio de trabalhos',
+        'Portfólio de trabalhos',
         'Seção de serviços',
         'Otimização de performance',
       ],

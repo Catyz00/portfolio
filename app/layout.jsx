@@ -74,7 +74,7 @@ export default function RootLayout({ children }) {
                     href="/"
                     className="text-foreground hover:text-primary transition px-3 py-2"
                   >
-                    Portfolio
+                    Portfólio
                   </a>
                   <a
                     href="/servicos"
@@ -158,7 +158,7 @@ export default function RootLayout({ children }) {
                   onClick={() => setMenuOpen(false)}
                   className="text-foreground hover:text-primary transition px-3 py-2 rounded"
                 >
-                  Portfolio
+                  Portfólio
                 </a>
                 <a
                   href="/servicos"

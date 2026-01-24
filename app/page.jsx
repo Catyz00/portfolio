@@ -266,7 +266,7 @@ export default function Home() {
           {/* Download CV abaixo do subtítulo */}
           <div className="mt-4 sm:mt-6 flex justify-center">
             <a
-              href="/CV_Dev_CatarinaRibeiro_2025.pdf"
+              href="/CV-DEV-CATARINA-RIBEIRO-2026.pdf"
               download
               className="px-4 py-2 sm:px-6 sm:py-3 rounded-lg bg-secondary text-secondary-foreground hover:opacity-90 transition font-semibold inline-block w-full sm:w-auto text-center"
               style={{ transitionDelay: heroVisible ? '240ms' : '0ms' }}

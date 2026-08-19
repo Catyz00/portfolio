@@ -193,28 +193,27 @@ export default function AboutSection() {
               </span>
             </h2>
             <p className="text-lg text-foreground/80 leading-relaxed">
-              Sou desenvolvedora web apaixonada por criar experiências digitais,
-              com 1 ano de experiência como estagiária e foco em React, Next.js
-              e tecnologias modernas.
-              <br />
-              <br />
-              Minha jornada começou em 2022, estudando web design em cursos
-              online, o que despertou meu interesse pelo desenvolvimento
-              front-end e me levou a buscar uma formação mais sólida.
-              <br />
-              <br />
-              Em 2023, entrei no curso de Análise e Desenvolvimento de Sistemas
-              e, no ano seguinte, conquistei meu primeiro estágio, onde pude
-              aplicar meus conhecimentos em projetos reais e colaborar com
-              equipes talentosas. Essa vivência fortaleceu minhas habilidades e
-              confirmou minha paixão pelo front-end.
-              <br />
-              <br />
-              Além da área tech, sou amante dos animais, gosto de viajar,
-              conhecer novas culturas e músicas. No meu tempo livre, costumo
-              jogar videogame e praticar atividades ao ar livre, como trilhas e
-              passeios de bicicleta.
-            </p>
+                Sou desenvolvedora Front-End formada em Análise e Desenvolvimento de
+                Sistemas, com experiência profissional no desenvolvimento e manutenção de
+                aplicações web.
+                <br />
+                <br />
+                Trabalho principalmente com React, Next.js, JavaScript e TypeScript, além de
+                integração com APIs REST e desenvolvimento de interfaces responsivas e
+                reutilizáveis.
+                <br />
+                <br />
+                Minha trajetória na área de tecnologia começou em 2022, quando iniciei meus
+                estudos em desenvolvimento web. Em 2024, conquistei minha primeira
+                experiência profissional como estagiária e passei a atuar no desenvolvimento
+                de projetos reais, trabalhando em equipe e aplicando boas práticas de
+                desenvolvimento.
+                <br />
+                <br />
+                Atualmente, estou aprofundando meus conhecimentos em desenvolvimento Full
+                Stack com TypeScript e em Cybersecurity, buscando ampliar minha capacidade de
+                desenvolver aplicações completas, eficientes e seguras.
+                </p>
           </div>
 
           {/* Social Links */}

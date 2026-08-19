@@ -55,13 +55,13 @@ Atualmente, estou aprofundando meus conhecimentos em **TypeScript, desenvolvimen
 Clone o repositório:
 
 ```bash
-git clone URL_DO_SEU_REPOSITORIO
+git clone https://github.com/Catyz00/portfolio.git
 ```
 
 Entre na pasta:
 
 ```bash
-cd NOME_DO_REPOSITORIO
+cd portfolio
 ```
 
 Instale as dependências:

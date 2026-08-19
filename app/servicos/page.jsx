@@ -2,7 +2,6 @@
 
 // no state needed — always show webdesign
 import { useState } from 'react';
-import TarotServices from '@/components/tarot-services';
 import WebDesignServices from '@/components/web-design-services';
 
 export default function ServicesPage() {

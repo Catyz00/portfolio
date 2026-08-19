@@ -36,7 +36,6 @@ Atualmente, estou aprofundando meus conhecimentos em **TypeScript, desenvolvimen
 
 * Git
 * GitHub
-* Docker
 * Vercel
 
 ## ✨ Funcionalidades

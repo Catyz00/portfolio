@@ -98,7 +98,7 @@ Atualmente, estou aprofundando meus conhecimentos em **desenvolvimento Full Stac
 
 ## 📫 Contato
 
-* 💼 LinkedIn: SEU_LINK_DO_LINKEDIN
+* 💼 LinkedIn: https://www.linkedin.com/in/catarina-dalsan
 * 💻 GitHub: https://github.com/Catyz
 * 🌐 Portfólio: https://catarinaribeirodev.vercel.app/
 

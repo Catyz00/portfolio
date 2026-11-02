@@ -6,9 +6,9 @@ import { Github, Linkedin, Instagram } from 'lucide-react';
 function AnimatedProfile() {
   const lines = [
     '  nome: "Catarina Dalsan",',
-    '  idade: 22,',
+    '  idade: 23,',
     '  local: "São Paulo - SP",',
-    '  area: "Front-End",',
+    '  area: "Desenvolvedora",',
   ];
 
   const [visibleCount, setVisibleCount] = useState(0);
@@ -193,7 +193,7 @@ export default function AboutSection() {
               </span>
             </h2>
             <p className="text-lg text-foreground/80 leading-relaxed">
-                Sou desenvolvedora Front-End formada em Análise e Desenvolvimento de
+                Sou desenvolvedora formada em Análise e Desenvolvimento de
                 Sistemas, com experiência profissional no desenvolvimento e manutenção de
                 aplicações web.
                 <br />

@@ -90,7 +90,7 @@ O projeto está hospedado na Vercel.
 
 ## 👩‍💻 Sobre mim
 
-Sou desenvolvedora Front-End formada em **Análise e Desenvolvimento de Sistemas**, com experiência profissional no desenvolvimento e manutenção de aplicações web.
+Sou desenvolvedora formada em **Análise e Desenvolvimento de Sistemas**, com experiência profissional no desenvolvimento e manutenção de aplicações web.
 
 Trabalho principalmente com **React, Next.js, JavaScript e TypeScript**, além de integração com APIs REST e desenvolvimento de interfaces responsivas e reutilizáveis.
 

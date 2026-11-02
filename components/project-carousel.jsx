@@ -31,6 +31,33 @@ const projects = [
     link: 'https://portal.affinityprime.com.br',
     technologies: ['Next.js', 'TypeScript', 'Tailwind CSS'],
   },
+  {
+    id: 4,
+    title: 'WebSiteCriaLink',
+    description:
+      'Website simples e informativo para apresentar a empresa e seus serviços.',
+    image: '/crialink.png',
+    link: 'https://crialink.online',
+    technologies: ['Website informativo', 'Design responsivo'],
+  },
+  {
+    id: 5,
+    title: 'WebSite e Dashboard PokeNight',
+    description:
+      'Site completo com área administrativa para gerenciar o conteúdo da plataforma.',
+    image: '/pnight.png',
+    link: 'https://www.pnight.com.br/',
+    technologies: ['Site completo', 'Área administrativa'],
+  },
+  {
+    id: 6,
+    title: 'WebSite Lua do Oriente',
+    description:
+      'Website informativo com apresentação dos serviços e canal de contato.',
+    image: '/lua-do-oriente.png',
+    link: 'https://www.luadoriente.com.br/',
+    technologies: ['Website informativo', 'Contato'],
+  },
 ];
 
 export default function ProjectCarousel() {
